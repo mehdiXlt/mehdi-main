@@ -12,26 +12,48 @@ import Button  from './components/home/button';
 import Portfolio from './components/home/potfolio';
 
 
+// ::: darktheme ::: //
+import { lightTheme, darkTheme, GlobalStyles } from "./components/darkmode/light.js";
+import styled, { ThemeProvider } from "styled-components";
+import {FaRegMoon} from 'react-icons/fa'
+import { useState } from 'react';
+
+
+const StyledApp = styled.div`
+  color: ${(props) => props.theme.fontColor};
+`;
+
+
 function App() {
   
+  const [theme, setTheme] = useState("light");
+
+  const themeToggler = () => {
+    theme === "light" ? setTheme("dark") : setTheme("light");
+  };
   
 
   return (
-    <div className="App">
-
-        <Header/>
-        <Home className='panel'/>
-        <About className='panel'/> 
-        <Skills className='panel'/>
-        <Qualification className='panel'/>
-        <Portfolio className='panel'/>
-        <Services className='panel'/>  
-        <Project className='panel'/>
-        <Contact />
-        <Footer />
-        <Button />
-
-    </div>
+    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+      <GlobalStyles />
+      <StyledApp>
+        <div className="App">
+        <span className='darkmode' onClick={() => themeToggler()}> <FaRegMoon /> </span>
+            <Header/>
+            <Home className='panel'/>
+            <About className='panel'/> 
+            <Skills className='panel'/>
+            <Qualification className='panel'/>
+            <Portfolio className='panel'/>
+            <Services className='panel'/>  
+            <Project className='panel'/>
+            <Contact />
+            <Footer />
+            <Button />
+    
+          </div>
+      </StyledApp>
+    </ThemeProvider>
   );
 }
 

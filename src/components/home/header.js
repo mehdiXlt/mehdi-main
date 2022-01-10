@@ -57,7 +57,7 @@ const Header =() =>{
                         <li className='nav__item' onClick={()=>{
                             setShowNav(false)
                         }}>
-                            <a href='#Portfolio' className='nav__link'>
+                            <a href='#portfolio' className='nav__link'>
                                 <AiOutlinePicture className='nav__icon'/>Portfolio
                             </a>
                         </li>

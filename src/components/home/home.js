@@ -5,6 +5,8 @@ import { AiOutlineDown } from 'react-icons/ai'
 import RubberBand from 'react-reveal/RubberBand'
 import {Parallax} from 'react-scroll-parallax'
 
+import HOMEIMG from '../img/homeimg.jpg'
+
 const Home =()=>{
 
 
@@ -46,6 +48,7 @@ return(
                                 <image className="home__blod-img" href=""/>
                             </g>
                         </svg>
+
 
                     </div>
 
