@@ -20,12 +20,12 @@
 
 /* ::: darkmode ::: */
 .darkmode{
-  position: absolute;
-  bottom: 2%;
-  left: 51%;
-  transform: translate(-50% , -50%);
   cursor: pointer;
   color: var(--first-color);
+  position: fixed;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50% , -50%);
 }
 
 /* ========= root ========= */
@@ -267,8 +267,13 @@ img {
   color: var(--first-color-alt);
 }
 
+.mt{
+  margin-top: 4rem;
+}
+
 .home__blob {
   width: 200px;
+  border-radius: 1rem;
   fill: var(--first-color-alt);
 }
 
@@ -905,6 +910,13 @@ img {
 
 /* big screen */
 @media screen and (min-width: 768px) {
+  .darkmode{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+  }
+  
   .skills{
     height: 100vh;
   }
@@ -1109,15 +1121,25 @@ img {
 }
 /* huge screen */
 @media screen and (min-width: 1024px) {
+  .darkmode{
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+  }
+  
   .header,
   .main {
     padding: 0;
   }
 
+  .home{
+    margin-top: -101px;
+  }
   .home__data {
     transform: translateX(-35rem);
   }
-  .home__blob {
+  .home__img {
     width: 320px;
     transform: translateX(25rem);
   }
@@ -1127,7 +1149,7 @@ img {
   }
 
   .home__scroll {
-    transform: translateY(-8rem);
+    transform: translateY(-10rem);
   }
 
   .button__top {
